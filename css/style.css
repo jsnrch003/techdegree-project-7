@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase;
+    text-align: left;
+    margin-left: 1em;
+    margin-bottom: 0;
+    letter-spacing: .1em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #817dc9;
+}
+
+svg {
+    width: 2em;
+    fill: #fff;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #817dc9;
+    align-items: center;
+    width: 100%;
+}
+
+#nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #534f9c;
+    align-items: center;
+    margin-top: 0;
+    height: 4em;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-bar svg {
+    width: 2.5em;
+
+}
+
+.logo {
+    margin-left: .5em;
+    color: #fff;
+}
+
+.font-light {
+    font-weight: 200;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.sup {
+    font-size: .5em;
+}
+
+.header-right ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: #fff;
+}
+
+.bell {
+    width: 1.75em;
+    padding: .5em;
+}
+
+.header-right li:nth-of-type(2) {
+    border-left: 1px solid #bdbdbd57;
+}
+
+.header-right li {
+    margin-right: .5em;
+    padding-left: .5em;
+    text-align: center;
+}
+
+.student-pic {
+    width: 3em;
+    border-radius: 50%;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f4f4f4;
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+}
+
+#members {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-member,
+.recent-activity {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+    border-bottom: 2px solid #9f9f9f5e;
+}
+
+.recent-activity:last-child {
+    border-bottom: none;
+}
+
+.member-pic,
+.member-name,
+.member-email,
+.member-join,
+.member-activity,
+.activity-time {
+    margin: 0;
+}
+
+.member-name,
+.member-email,
+.member-join,
+.member-activity,
+.activity-time {
+    font-weight: 400;
+}
+
+.member-pic {
+    border-radius: 50%;
+    width: 5em;
+}
+
+#message-user {
+    border-top: 2px solid #9f9f9f5e;
+}
+
+.message-user {
+    margin-top: 1.2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: .5em;
+}
+
+fieldset {
+    border: none;
+}
+
+.user-search,
+.user-message,
+.send-message {
+    margin: .6em 0;
+    padding: 1em .5em;
+    border: 2px solid #9f9f9f5e;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.user-search::placeholder,
+.user-message::placeholder {
+    font-weight: 200;
+}
+
+.send-message {
+    text-transform: uppercase;
+    background-color: #817dc9;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 200;
+    letter-spacing: .2rem;
+    padding: 1em;
+}
+
+.user-message {
+    height: 8em;
+}
+
+/* ===========================================================*/
+
+.flex-column-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    padding: 0;
+}
+
+.flex-row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.7em 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 45px;
+}
+   
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    left: 10px;
+    bottom: 5px;
+    background-color: #fff;
+    transition: .4s;
+    border: 3px solid #817dc9;
+}
+  
+input:checked + .slider {
+    background-color: #817dc9;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #817dc9;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(60px);
+}
+  
+
+.slider.round {
+    border-radius: 34px;
+    border: 3px solid #f3f3f3;
+    height: 45px;
+    width: 110px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
