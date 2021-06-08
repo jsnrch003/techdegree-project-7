@@ -1,3 +1,7 @@
+/* 
+Base Styles
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
 * {
@@ -41,13 +45,27 @@ a {
 }
 
 svg {
-  width: 2.5em;
+  width: 2em;
   fill: #fff;
 }
 
-fieldset {
-  border: none;
+.font-200 {
+  font-weight: 200;
 }
+
+.font-500 {
+  font-weight: 500;
+}
+
+.font-600 {
+  font-weight: 600;
+}
+
+.sup {
+  font-size: 0.5em;
+}
+
+/* ============================================================= */
 
 #header {
   display: flex;
@@ -57,9 +75,10 @@ fieldset {
   align-items: center;
   width: 100%;
   padding: 1em;
+  grid-area: header;
 }
 
-#nav ul {
+.nav-list {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -78,11 +97,11 @@ fieldset {
 .svg-icons {
   width: 2.5em;
 
-  /* 
-  filter credit to 
+  /* ==============================
+  filter credit
   CSS Filter Generator
   https://codepen.io/sosuke/pen/Pjoqqp
-  */
+  ============================== */
 
   filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(218deg) brightness(108%) contrast(107%);
 }
@@ -90,22 +109,6 @@ fieldset {
 .logo {
   color: #fff;
   font-size: 1.5em;
-}
-
-.font-200 {
-  font-weight: 200;
-}
-
-.font-500 {
-  font-weight: 500;
-}
-
-.font-600 {
-  font-weight: 600;
-}
-
-.sup {
-  font-size: 0.5em;
 }
 
 .header-right ul {
@@ -173,6 +176,7 @@ https://cssanimate.com/
   flex-direction: column;
   text-align: left;
   margin: 1.7em 1em;
+  grid-area: main-header;
 }
 
 .tab {
@@ -183,7 +187,6 @@ https://cssanimate.com/
 .alert {
   display: flex;
   cursor: pointer;
-  margin: 1em 0;
   background-color: #817dc9;
   color: #fff;
   font-weight: 200;
@@ -192,7 +195,7 @@ https://cssanimate.com/
   padding: 0.7em 1em;
   border: 2px solid #9f9f9f5e;
   border-radius: 5px;
-  width: 90%;
+  width: 95%;
   margin: 2em auto;
   justify-content: space-between;
 }
@@ -215,19 +218,23 @@ https://cssanimate.com/
   border-radius: 50%;
 }
 
-.social-container {
+.social-stat {
   display: flex;
   flex-direction: row;
   background-color: #f3f3f3;
   border: 2px solid #d3d3d3;
   border-radius: 5px;
-  width: 90%;
-  margin: 1.2em auto;
-  padding: 1.2em;
+  width: 95%;
+  max-width: 460px;
+  margin: 1em auto;
+  padding: 1em;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .social-text {
-  padding-left: 1.5em;
+  padding-left: calc(10% / 2);
+  font-size: .8em;
 }
 
 p.social-brand {
@@ -246,8 +253,8 @@ p.social-brand {
   display: flex;
   flex-direction: column;
   background-color: #817dc9;
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
@@ -256,13 +263,14 @@ p.social-brand {
 #members {
   display: flex;
   flex-direction: column;
+  grid-area: members;
 }
 
 .new-member,
 .recent-activity {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
-  padding: 1.7em;
+  padding: 1.5em;
   border-bottom: 2px solid #9f9f9f5e;
 }
 
@@ -276,8 +284,15 @@ p.social-brand {
   width: 5em;
 }
 
+.right-arrow {
+  display: none;
+  font-size: 2em;
+  color: #817dc9;
+}
+
 #message-user {
   border-top: 2px solid #9f9f9f5e;
+  grid-area: message-user;
 }
 
 form {
@@ -289,7 +304,7 @@ form {
 .user-search-field,
 .user-message-field,
 .timezone-field {
-  width: 90%;
+  width: 95%;
   margin: 1em auto;
   padding: 1em;
   border: 2px solid #9f9f9f5e;
@@ -324,32 +339,29 @@ form {
 }
 
 .button-send {
-  width: 90%;
+  width: 95%;
 }
 
 #settings {
   display: flex;
   flex-direction: column;
+  grid-area: settings;
+  justify-content: space-between;
 }
 
-.flex-column-container {
+.settings-flex-list {
   display: flex;
   flex-direction: column;
-  margin: 1em;
-  padding: 0 1.5em;
+  margin: 0em 1.2em;
 }
 
-.flex-row-container {
+.settings-flex-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin: 1em 0;
-}
-
-.flex-column-container p {
-  font-size: 1.2em;
 }
 
 .switch {
@@ -359,7 +371,7 @@ form {
 }
 
 .timezone-field {
-  width: 90%;
+  width: 95%;
   text-decoration: none;
 }
 
@@ -371,7 +383,7 @@ form {
 
 .button-save,
 .button-cancel {
-  width: 40%;
+  width: 45%;
 }
 
 .button-cancel {
@@ -379,7 +391,168 @@ form {
 }
 
 
-/* =================================
-Grid 
-=================================*/
+/* =============== Grid =============== */
 
+#nav {
+  grid-area: nav;
+}
+
+#traffic {
+  grid-area: traffic;
+}
+
+.daily-traffic {
+  grid-area: daily-traffic;
+}
+
+.mobile-users {
+  grid-area: mobile-users;
+}
+
+#social-stats {
+  grid-area: social-stats;
+}
+
+#activity {
+  grid-area: activity;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  'header'
+  'nav'
+  'dashboard';
+}
+
+/* =============== Media Queries =============== */
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 5em 1fr;
+    grid-template-areas:
+    'header header'
+    'nav dashboard';
+  }
+
+  #dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'main-header main-header'
+    'traffic traffic'
+    'daily-traffic mobile-users'
+    'social-stats social-stats'
+    'members members'
+    'activity activity'
+    'message-user message-user'
+    'settings settings'
+    ;
+  }
+
+  .nav-list {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    padding-bottom: 3.5em;
+  }
+
+  .chart-scope {
+    justify-content: space-evenly;
+  }
+
+  .social-stats {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .social-stat {
+    /* max-width: 250px; */
+    margin: .3em;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-start;
+    width: calc(95% / 3);
+  }
+
+  .member-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .new-member, .recent-activity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+  .member-info-container,
+  .member-activity-container {
+    display: flex;
+    align-items: center;
+    padding-right: 1em;
+}
+
+  .member-info,
+  .member-activity {
+    text-align: left;
+    margin-left: 1em;
+}
+
+  .right-arrow {
+    display: initial;
+  }
+
+  .settings-flex-container {
+    justify-content: flex-start;
+  }
+
+  .settings-flex-item p {
+    width: 15em;
+    text-align: left;
+}
+
+}
+
+@media (min-width: 1080px) {
+  #dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'main-header main-header'
+    'traffic traffic'
+    'daily-traffic mobile-users'
+    'social-stats social-stats'
+    'members activity'
+    'message-user settings'
+    ;
+  }
+
+  .social-stat {
+    margin: .3em;
+    padding: 1em;
+    max-width: 20em;
+  }
+
+  .social-text {
+    font-size: 1em;
+  }
+
+  .member-pic {
+    width: 4em;
+  }
+
+  .new-member,
+  .recent-activity {
+    padding: 1.5em 1em;
+  }
+}

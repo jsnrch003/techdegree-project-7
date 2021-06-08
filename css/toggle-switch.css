@@ -124,11 +124,14 @@
     .switch-toggle::after {
       clear: both;
       content: '';
-      display: table; }
+      display: table;
+      }
     .switch-toggle *,
     .switch-toggle *:before,
     .switch-toggle *:after {
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      color: #888b92;
+      }
     .switch-toggle a {
       display: block;
       transition: all 0.2s ease-out; }
@@ -186,6 +189,8 @@
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ a {
       width: 20%;
       margin: 0 1em;
+      cursor: pointer;
+      max-width: 12em;
       }
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(3) + label ~ a {
       left: 25%; }
@@ -311,4 +316,5 @@
   color: #fff;
   background-color: #817dc9;
   border-radius: 30px;
+  max-width: 10em;
 }
