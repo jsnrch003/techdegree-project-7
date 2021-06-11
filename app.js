@@ -3,10 +3,11 @@
 const alertBanner = document.getElementById('alert');
 const alertX = document.querySelector('#dashboard > div > div > p:nth-child(2)');
 const bell = document.querySelector('#header > div > div');
+const notification = document.querySelector('#header > div > div > span');
 
 alertBanner.innerHTML = `
 <p><span class="font-500">Alert:</span> You have unread messages</p>
-<p>x</p>
+<p class="close-white">&times;</p>
 `;
 
 alertBanner.addEventListener('click', (e) => {
@@ -15,12 +16,24 @@ alertBanner.addEventListener('click', (e) => {
 	}
 });
 
+// ================================= Modal =================================
+const modal1 = document.getElementById('modal1');
+const modal2 = document.getElementById('modal2');
+const span1 = document.querySelector('#modal1 > div > .close');
+const span2 = document.querySelector('#modal2 > div > .close');
+
 bell.addEventListener('click', (e) => {
-	alertBanner.innerHTML = `
-	<p><span class="font-500">Alert:</span> Someone commented on your post</p>
-<p>x</p>
-	`;
-	alertBanner.style.display = 'inherit';
+	modal1.style.display = 'block';
+	modal2.style.display = 'block';
+	notification.style.display = 'none';
+});
+
+span1.addEventListener('click', (e) => {
+	modal1.style.display = 'none';
+});
+
+span2.addEventListener('click', (e) => {
+	modal2.style.display = 'none';
 });
 
 // Line Chart Widget
