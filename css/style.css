@@ -1,4 +1,4 @@
-/* ========== Base Styles ========== */
+/* ====================== Base Styles ====================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
@@ -57,6 +57,8 @@ svg {
 
 /* ============================================================= */
 
+/* ====================== Header ====================== */
+
 #header {
 	display: flex;
 	flex-direction: row;
@@ -66,27 +68,6 @@ svg {
 	width: 100%;
 	padding: 1em;
 	grid-area: header;
-}
-
-.nav-list {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	background-color: #534f9c;
-	align-items: center;
-	margin-top: 0;
-	height: 4.5em;
-	padding: 2em;
-	width: 100%;
-}
-
-.nav-bar svg {
-	width: 2.5em;
-}
-
-.svg-icons {
-	width: 2.5em;
-	filter: invert(100%);
 }
 
 .logo {
@@ -107,9 +88,12 @@ svg {
 	color: #fff;
 }
 
-#header > div > ul > li:nth-child(1) {
-	border-left: 1px solid #fff;
+.header-right li {
+	padding-left: 1em;
+	text-align: center;
 }
+
+/* ====================== Notifications Bell ====================== */
 
 .ringBell,
 .ringBell:after {
@@ -117,7 +101,7 @@ svg {
 	height: 35px;
 }
 
-.count,
+.notification,
 .ringBell:after {
 	position: absolute;
 }
@@ -150,7 +134,7 @@ svg {
 	}
 }
 
-.count {
+.notification {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -161,6 +145,16 @@ svg {
 	background-color: #f0f;
 	margin: -0.2em 2em;
 	z-index: 90;
+}
+
+/* ====================== Borders ====================== */
+
+#header > div > ul > li:nth-child(1) {
+	border-left: 1px solid #fff;
+}
+
+.header-right li:nth-of-type(2) {
+	border-left: 1.7px solid #bdbdbd57;
 }
 
 #traffic,
@@ -179,13 +173,27 @@ svg {
 	border-right: 2px solid #9f9f9f5e;
 }
 
-.header-right li:nth-of-type(2) {
-	border-left: 1.7px solid #bdbdbd57;
+/* ====================== Nav ====================== */
+
+.nav-list {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: #534f9c;
+	align-items: center;
+	margin-top: 0;
+	height: 4.5em;
+	padding: 2em;
+	width: 100%;
 }
 
-.header-right li {
-	padding-left: 1em;
-	text-align: center;
+.nav-bar svg {
+	width: 2.5em;
+}
+
+.svg-icons {
+	width: 2.5em;
+	filter: invert(100%);
 }
 
 .main-header {
@@ -213,6 +221,8 @@ svg {
 	align-items: center;
 }
 
+/* ====================== Charts ====================== */
+
 .chart-scope {
 	margin-top: 0.5em;
 	display: flex;
@@ -222,7 +232,6 @@ svg {
 .daily-traffic,
 .mobile-users {
 	width: 100%;
-	/* margin: 0 auto; */
 }
 
 canvas {
@@ -238,10 +247,7 @@ canvas {
 	justify-content: space-around;
 }
 
-.student-pic {
-	width: 3.3em;
-	border-radius: 50%;
-}
+/* ====================== Social Stats ====================== */
 
 .social-stat {
 	display: flex;
@@ -285,6 +291,13 @@ p.social-brand {
 	justify-content: center;
 }
 
+/* ====================== Members ====================== */
+
+.student-pic {
+	width: 3.3em;
+	border-radius: 50%;
+}
+
 #members {
 	display: flex;
 	flex-direction: column;
@@ -315,6 +328,8 @@ p.social-brand {
 	color: #817dc9;
 	cursor: pointer;
 }
+
+/* ====================== Message ====================== */
 
 #message-user {
 	grid-area: message-user;
@@ -367,6 +382,8 @@ form {
 	width: 95%;
 }
 
+/* ====================== Settings ====================== */
+
 #settings {
 	display: flex;
 	flex-direction: column;
@@ -415,7 +432,7 @@ form {
 	background-color: #9f9f9f;
 }
 
-/* =============== Grid =============== */
+/* ====================== Grid ====================== */
 
 #nav {
 	grid-area: nav;
@@ -455,7 +472,9 @@ form {
 		'dashboard';
 }
 
-/* =============== Media Queries =============== */
+/* ====================== Media Queries ====================== */
+
+/* ====================== @ 768px ====================== */
 
 @media (min-width: 768px) {
 	.grid-container {
@@ -565,6 +584,8 @@ form {
 	}
 }
 
+/* ====================== @ 1024px ====================== */
+
 @media (min-width: 1024px) {
 	#dashboard {
 		display: grid;
@@ -609,7 +630,6 @@ form {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
