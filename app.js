@@ -42,17 +42,17 @@ span2.addEventListener('click', (e) => {
 
 const trafficCanvas = document.querySelector('#traffic-chart');
 const hourlyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(2)'
+	'#traffic > div > div:nth-child(2) > ul > li:nth-child(1) > label'
 );
 
 const dailyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(4)'
+	'#traffic > div > div:nth-child(2) > ul > li:nth-child(2) > label'
 );
 const weeklyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(6)'
+	'#traffic > div > div:nth-child(2) > ul > li:nth-child(3) > label'
 );
 const monthlyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(8)'
+	'#traffic > div > div:nth-child(2) > ul > li:nth-child(4) > label'
 );
 
 const trafficDataHourly = {
