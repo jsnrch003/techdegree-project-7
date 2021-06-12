@@ -1,7 +1,6 @@
-// add functionality to clear Alert message
+// ================================= Alert =================================
 
 const alertBanner = document.getElementById('alert');
-// const alertX = document.querySelector('#dashboard > div > div > p:nth-child(2)');
 
 alertBanner.innerHTML = `
 <p><span class="font-500">Alert:</span> You have unread messages</p>
@@ -20,13 +19,15 @@ const modal1 = document.getElementById('modal1');
 const modal2 = document.getElementById('modal2');
 const span1 = document.querySelector('#modal1 > div > .close');
 const span2 = document.querySelector('#modal2 > div > .close');
-const bell = document.querySelector('#header > div > div');
-const notification = document.querySelector('#header > div > div > span');
+const bell = document.querySelector('#header > div > div.ringBell.svg-icons');
+const notification = document.querySelector('#header > div > div.notification');
 
 bell.addEventListener('click', (e) => {
 	modal1.style.display = 'block';
 	modal2.style.display = 'block';
 	notification.style.display = 'none';
+	bell.style.animation = 'none';
+	alertBanner.style.display = 'none';
 });
 
 span1.addEventListener('click', (e) => {
@@ -41,17 +42,17 @@ span2.addEventListener('click', (e) => {
 
 const trafficCanvas = document.querySelector('#traffic-chart');
 const hourlyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-toggle > label:nth-child(2)'
+	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(2)'
 );
 
 const dailyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-toggle > label:nth-child(4)'
+	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(4)'
 );
 const weeklyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-toggle > label:nth-child(6)'
+	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(6)'
 );
 const monthlyChart = document.querySelector(
-	'#traffic > div > div.chart-scope.switch-toggle > label:nth-child(8)'
+	'#traffic > div > div.chart-scope.switch-chart > label:nth-child(8)'
 );
 
 const trafficDataHourly = {
@@ -119,7 +120,7 @@ const trafficDataMonthly = {
 	labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
 	datasets: [
 		{
-			data: [3495, 4271, 3315, 7541, 8946, 4611, 9787, 6912, 5626, 5729, 6465, 4812],
+			data: [3495, 3271, 4315, 7541, 5946, 4611, 7787, 6912, 5626, 5729, 6465, 4812],
 			backgroundColor: 'rgba(116,119,191,.3)',
 			borderWidth: 1,
 			fill: 'origin',
@@ -151,17 +152,14 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 hourlyChart.addEventListener('click', (e) => {
-	if (e.target.tagName === 'LABEL') {
-		if (trafficChart) {
-			trafficChart.destroy();
-		}
-
-		trafficChart = new Chart(trafficCanvas, {
-			type: 'line',
-			data: trafficDataHourly,
-			options: trafficOptions,
-		});
+	if (trafficChart) {
+		trafficChart.destroy();
 	}
+	trafficChart = new Chart(trafficCanvas, {
+		type: 'line',
+		data: trafficDataHourly,
+		options: trafficOptions,
+	});
 });
 
 dailyChart.addEventListener('click', (e) => {

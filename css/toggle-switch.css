@@ -10,17 +10,12 @@
 /* ====================== Traffic Chart ====================== */
 
 /* Traffic chart label height */
-.switch-chart label,
-.switch-chart > span {
+.switch-chart label {
 	line-height: 2em;
-}
-
-/* Traffic chart label background */
-.switch-chart input:focus ~ span a,
-.switch-chart input:focus + label {
-	background-color: #817dc9;
-	color: #fff;
-	border-radius: 30px;
+	width: 20%;
+	margin: 0 1em;
+	cursor: pointer;
+	max-width: 12em;
 }
 
 /* Traffic chart labels */
@@ -28,6 +23,13 @@
 	position: absolute;
 	left: 0;
 	opacity: 0;
+}
+
+/* Traffic chart label active background */
+.switch-chart input:focus + label {
+	background-color: #817dc9;
+	color: #fff;
+	border-radius: 30px;
 }
 
 /* Traffic chart labels */
@@ -40,16 +42,6 @@
 	width: 10px;
 	height: 100%;
 	display: none;
-}
-
-/* Traffic chart labels */
-.switch-chart label:nth-child(2):nth-last-child(8),
-.switch-chart label:nth-child(2):nth-last-child(8) ~ label,
-.switch-chart label:nth-child(2):nth-last-child(8) ~ a {
-	width: 20%;
-	margin: 0 1em;
-	cursor: pointer;
-	max-width: 12em;
 }
 
 /* ====================== Settings toggles ====================== */
@@ -122,7 +114,9 @@
 /* Settings toggle button disabled text */
 .switch-ios.switch-setting > span span:first-of-type {
 	opacity: 1;
-	padding-left: 2.5em;
+	text-align: right;
+	padding-right: 1.5em;
+	padding-top: 0.1em;
 }
 
 /* Settings toggle button border */
@@ -147,4 +141,7 @@
 .switch-ios.switch-setting input:checked ~ span span:last-of-type {
 	opacity: 1;
 	color: #fff;
+	text-align: left;
+	padding-left: 1.5em;
+	padding-top: 0.1em;
 }

@@ -55,8 +55,6 @@ svg {
 	font-size: 0.5em;
 }
 
-/* ============================================================= */
-
 /* ====================== Header ====================== */
 
 #header {
@@ -78,6 +76,7 @@ svg {
 .header-right {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 }
 
 .header-right ul {
@@ -95,62 +94,43 @@ svg {
 
 /* ====================== Notifications Bell ====================== */
 
-.ringBell,
-.ringBell:after {
-	width: 33px;
-	height: 35px;
-}
-
-.notification,
-.ringBell:after {
-	position: absolute;
-}
-
 .ringBell {
-	cursor: pointer;
-	margin: 0.5em 1.5em;
-}
-
-.ringBell:after {
-	content: '';
 	transform-origin: top;
-	background-image: url(../svgs/bell.svg);
-	background-size: cover;
+	cursor: pointer;
+	margin-right: 1em;
 }
 
-.ringBell:hover:after {
-	animation: ring 0.16s ease-in-out 5;
+.ringBell:hover {
+	animation: ring 0.26s ease-in-out 5;
 }
 
 @keyframes ring {
 	0% {
-		transform: rotate(18deg);
+		transform: rotate(12deg);
 	}
 	50% {
 		transform: rotate(0deg);
 	}
 	100% {
-		transform: rotate(-18deg);
+		transform: rotate(-12deg);
 	}
 }
 
 .notification {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
 	width: 0.5em;
 	height: 0.5em;
 	border-radius: 50%;
-	background-color: #f0f;
-	margin: -0.2em 2em;
+	background-color: #0f0;
 	z-index: 90;
+	top: -1.5em;
+	left: -1em;
+	position: relative;
 }
 
 /* ====================== Borders ====================== */
 
 #header > div > ul > li:nth-child(1) {
-	border-left: 1px solid #fff;
+	border-left: 1px solid #fff6;
 }
 
 .header-right li:nth-of-type(2) {
@@ -158,7 +138,8 @@ svg {
 }
 
 #traffic,
-#social-stats {
+#social-stats,
+#members {
 	border-bottom: 2px solid #9f9f9f5e;
 }
 
@@ -178,7 +159,7 @@ svg {
 .nav-list {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	background-color: #534f9c;
 	align-items: center;
 	margin-top: 0;
@@ -192,7 +173,7 @@ svg {
 }
 
 .svg-icons {
-	width: 2.5em;
+	width: 2em;
 	filter: invert(100%);
 }
 
@@ -444,10 +425,6 @@ form {
 	grid-area: traffic;
 }
 
-/* .daily-mobile-container {
-	grid-area: daily-mobile;
-} */
-
 .daily-traffic {
 	grid-area: daily-traffic;
 }
@@ -476,7 +453,9 @@ form {
 
 /* ====================== Media Queries ====================== */
 
-/* ====================== @ 768px ====================== */
+/* ======================
+ @ 768px 
+ ====================== */
 
 @media (min-width: 768px) {
 	.grid-container {
@@ -586,7 +565,9 @@ form {
 	}
 }
 
-/* ====================== @ 1024px ====================== */
+/* ======================
+ @ 1024px 
+ ====================== */
 
 @media (min-width: 1024px) {
 	#dashboard {
@@ -599,6 +580,10 @@ form {
 			'social-stats social-stats'
 			'members activity'
 			'message-user settings';
+	}
+
+	#members {
+		border-bottom: none;
 	}
 
 	.social-stat {
@@ -621,7 +606,8 @@ form {
 	}
 }
 
-/* ================================= Modal ================================= */
+/* ====================== Modal ====================== */
+
 .modal1,
 .modal2 {
 	display: none;
@@ -686,36 +672,21 @@ form {
 	cursor: pointer;
 }
 
+/* ====================== Autocomplete ====================== */
+
 .autocomplete {
-	/*the container must be positioned relative:*/
 	position: relative;
 	display: inline-block;
 }
-input {
-	border: 1px solid transparent;
-	background-color: #f1f1f1;
-	padding: 10px;
-	font-size: 16px;
-}
-input[type='text'] {
-	/* background-color: #f1f1f1; */
-	/* width: 100%; */
-}
-input[type='submit'] {
-	/* background-color: DodgerBlue; */
-	/* color: #fff; */
-}
+
 .autocomplete-items {
 	position: absolute;
 	border: 0.1em solid #d4d4d4;
-	/* border-bottom: none; */
-	/* border-top: 1px solid #d4d4d4; */
 	z-index: 99;
-	/*position the autocomplete items to be the same width as the container:*/
 	top: 85%;
 	width: 95%;
 	text-align: left;
-	left: 14px;
+	left: 0.8em;
 }
 .autocomplete-items div {
 	padding: 10px;
@@ -724,11 +695,9 @@ input[type='submit'] {
 	border-bottom: 1px solid #d4d4d4;
 }
 .autocomplete-items div:hover {
-	/*when hovering an item:*/
 	background-color: #e9e9e9;
 }
 .autocomplete-active {
-	/*when navigating through the items using the arrow keys:*/
 	background-color: #817dc9 !important;
 	color: #ffffff;
 }
