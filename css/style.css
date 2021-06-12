@@ -365,7 +365,7 @@ form {
 
 .button-send,
 .button-save,
-.button-cancel {
+.button-clear {
 	cursor: pointer;
 	margin: 0 auto 1em;
 	text-transform: uppercase;
@@ -426,11 +426,11 @@ form {
 }
 
 .button-save,
-.button-cancel {
+.button-clear {
 	width: 45%;
 }
 
-.button-cancel {
+.button-clear {
 	background-color: #9f9f9f;
 }
 
@@ -660,8 +660,8 @@ form {
 }
 
 .modal-content2 {
-	top: calc(100% / 4);
-	left: calc(100% / 8);
+	top: calc(100% / 4.2);
+	left: calc(100% / 8.4);
 	position: fixed;
 }
 

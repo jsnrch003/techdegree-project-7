@@ -1,9 +1,7 @@
 // add functionality to clear Alert message
 
 const alertBanner = document.getElementById('alert');
-const alertX = document.querySelector('#dashboard > div > div > p:nth-child(2)');
-const bell = document.querySelector('#header > div > div');
-const notification = document.querySelector('#header > div > div > span');
+// const alertX = document.querySelector('#dashboard > div > div > p:nth-child(2)');
 
 alertBanner.innerHTML = `
 <p><span class="font-500">Alert:</span> You have unread messages</p>
@@ -17,10 +15,13 @@ alertBanner.addEventListener('click', (e) => {
 });
 
 // ================================= Modal =================================
+
 const modal1 = document.getElementById('modal1');
 const modal2 = document.getElementById('modal2');
 const span1 = document.querySelector('#modal1 > div > .close');
 const span2 = document.querySelector('#modal2 > div > .close');
+const bell = document.querySelector('#header > div > div');
+const notification = document.querySelector('#header > div > div > span');
 
 bell.addEventListener('click', (e) => {
 	modal1.style.display = 'block';
@@ -36,7 +37,7 @@ span2.addEventListener('click', (e) => {
 	modal2.style.display = 'none';
 });
 
-// Line Chart Widget
+// ================================= Line Chart =================================
 
 const trafficCanvas = document.querySelector('#traffic-chart');
 const hourlyChart = document.querySelector(
@@ -145,7 +146,7 @@ const trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
 	type: 'line',
-	data: '',
+	data: trafficDataDaily,
 	options: trafficOptions,
 });
 
@@ -196,11 +197,11 @@ monthlyChart.addEventListener('click', (e) => {
 	});
 });
 
-// Bar Chart Widget
+// ================================= Bar Chart =================================
 
-const dailyCanvas = document.querySelector('#daily-chart');
+const barCanvas = document.querySelector('#bar-chart');
 
-const dailyData = {
+const barData = {
 	labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 	datasets: [
 		{
@@ -212,7 +213,7 @@ const dailyData = {
 	],
 };
 
-const dailyOptions = {
+const barOptions = {
 	scales: {
 		y: {
 			beginAtZero: true,
@@ -225,13 +226,13 @@ const dailyOptions = {
 	},
 };
 
-const dialyChart = new Chart(dailyCanvas, {
+const barChart = new Chart(barCanvas, {
 	type: 'bar',
-	data: dailyData,
-	options: dailyOptions,
+	data: barData,
+	options: barOptions,
 });
 
-// Mobile Chart Widget
+// ================================= Mobile Chart =================================
 
 const mobileCanvas = document.querySelector('#mobile-chart');
 
@@ -265,22 +266,22 @@ const mobileChart = new Chart(mobileCanvas, {
 	options: mobileOptions,
 });
 
-// ===================== Settings ===========================
+// ================================= Settings =================================
 
 const save = document.getElementById('save');
-const cancel = document.getElementById('cancel');
+const clear = document.getElementById('clear');
 const timezone = document.getElementById('timezone');
-const emailPref = document.getElementById('email');
-const profilePref = document.getElementById('profile');
+const email = document.getElementById('email');
+const profile = document.getElementById('profile');
 
 save.addEventListener('click', (e) => {
 	localStorage.setItem('timezone', timezone.value);
-	localStorage.setItem('email', emailPref.checked);
-	localStorage.setItem('profile', profilePref.checked);
+	localStorage.setItem('email', email.checked);
+	localStorage.setItem('profile', profile.checked);
 	alert(`Settings successfully saved`);
 });
 
-cancel.addEventListener('click', (e) => {
+clear.addEventListener('click', (e) => {
 	localStorage.clear();
 	alert(`Settings successfully cleared`);
 });

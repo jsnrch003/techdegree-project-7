@@ -70,7 +70,7 @@
 			<section id="traffic" class="traffic-container">
 				<div class="traffic-header">
 					<h3>Traffic</h3>
-					<div class="chart-scope switch-toggle">
+					<div class="chart-scope switch-chart">
 						<input id="hour" name="view" type="radio" checked />
 						<label for="hour" onclick="">Hour</label>
 
@@ -91,7 +91,7 @@
 			</section>
 			<section class="daily-traffic">
 				<h3>Daily Traffic</h3>
-				<canvas id="daily-chart"> </canvas>
+				<canvas id="bar-chart"> </canvas>
 			</section>
 			<section class="mobile-users">
 				<h3>Mobile Users</h3>
@@ -291,7 +291,7 @@
 							<p>Send Email Notifications</p>
 						</li>
 						<li class="settings-flex-item">
-							<label class="switch switch-ios switch-light">
+							<label class="switch switch-ios switch-setting">
 								<input id="email" type="checkbox" value="checked" />
 								<span>
 									<span>Off</span>
@@ -306,7 +306,7 @@
 							<p>Set Profile to Public</p>
 						</li>
 						<li class="settings-flex-item">
-							<label class="switch switch-ios switch-light">
+							<label class="switch switch-ios switch-setting">
 								<input id="profile" type="checkbox" value="checked" />
 								<span>
 									<span>Off</span>
@@ -330,7 +330,7 @@
 				</div>
 				<div class="settings-buttons">
 					<button class="button-save" id="save">Save</button>
-					<button class="button-cancel" id="cancel">Cancel</button>
+					<button class="button-clear" id="clear">Clear</button>
 				</div>
 			</section>
 		</main>
