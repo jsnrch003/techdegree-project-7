@@ -345,12 +345,13 @@ form {
 .user-message-field,
 .timezone-field {
 	width: 95%;
-	margin: 1em auto;
-	padding: 1em;
+	margin: 0.5em auto;
+	padding: 0.7em;
 	border: 2px solid #9f9f9f5e;
 	background-color: #f6f6f6;
 	border-radius: 5px;
 	font-size: 1.2em;
+	outline: none;
 }
 
 .user-search-field::placeholder,
@@ -376,6 +377,7 @@ form {
 	padding: 0.8em;
 	border: 2px solid #9f9f9f5e;
 	border-radius: 5px;
+	text-align: center;
 }
 
 .button-send {
@@ -635,7 +637,7 @@ form {
 
 .modal2 {
 	left: auto;
-	top: 20%;
+	top: 0%;
 	background-color: rgba(0, 0, 0, 0);
 }
 
@@ -652,12 +654,14 @@ form {
 }
 
 .modal-content {
-	margin: 10%;
+	top: calc(100% / 5);
+	left: calc(100% / 10);
+	position: fixed;
 }
 
 .modal-content2 {
-	top: 23%;
-	left: 12%;
+	top: calc(100% / 4);
+	left: calc(100% / 8);
 	position: fixed;
 }
 
@@ -680,4 +684,51 @@ form {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.autocomplete {
+	/*the container must be positioned relative:*/
+	position: relative;
+	display: inline-block;
+}
+input {
+	border: 1px solid transparent;
+	background-color: #f1f1f1;
+	padding: 10px;
+	font-size: 16px;
+}
+input[type='text'] {
+	/* background-color: #f1f1f1; */
+	/* width: 100%; */
+}
+input[type='submit'] {
+	/* background-color: DodgerBlue; */
+	/* color: #fff; */
+}
+.autocomplete-items {
+	position: absolute;
+	border: 0.1em solid #d4d4d4;
+	/* border-bottom: none; */
+	/* border-top: 1px solid #d4d4d4; */
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 85%;
+	width: 95%;
+	text-align: left;
+	left: 14px;
+}
+.autocomplete-items div {
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+	/*when hovering an item:*/
+	background-color: #e9e9e9;
+}
+.autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	background-color: #817dc9 !important;
+	color: #ffffff;
 }

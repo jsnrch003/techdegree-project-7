@@ -260,8 +260,8 @@
 
 			<section id="message-user">
 				<h3>Message User</h3>
-				<form class="message-container" action="">
-					<label for="user-search">
+				<form class="message-container" autocomplete="off">
+					<label class="autocomplete" for="user-search">
 						<input
 							class="user-search-field"
 							type="text"
@@ -279,7 +279,7 @@
 							placeholder="Message for User"
 						></textarea>
 					</label>
-					<input class="button-send" type="submit" value="send" />
+					<input class="button-send" value="send" />
 				</form>
 			</section>
 
@@ -291,8 +291,8 @@
 							<p>Send Email Notifications</p>
 						</li>
 						<li class="settings-flex-item">
-							<label class="switch switch-ios switch-light" onclick="">
-								<input id="email" type="checkbox" />
+							<label class="switch switch-ios switch-light">
+								<input id="email" type="checkbox" value="checked" />
 								<span>
 									<span>Off</span>
 									<span>On</span>
@@ -306,8 +306,8 @@
 							<p>Set Profile to Public</p>
 						</li>
 						<li class="settings-flex-item">
-							<label class="switch switch-ios switch-light" onclick="">
-								<input id="profile" type="checkbox" />
+							<label class="switch switch-ios switch-light">
+								<input id="profile" type="checkbox" value="checked" />
 								<span>
 									<span>Off</span>
 									<span>On</span>
@@ -319,7 +319,7 @@
 				</ul>
 				<div class="timezone">
 					<select name="timezone" id="timezone" class="timezone-field">
-						<option disabled selected>Select Time Zone</option>
+						<option value="default" disabled>Select Time Zone</option>
 						<option value="eastern">Eastern</option>
 						<option value="central">Central</option>
 						<option value="mountain">Mountain</option>
