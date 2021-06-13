@@ -676,29 +676,24 @@ form {
 /* ====================== Autocomplete ====================== */
 
 .autocomplete {
+	width: 95%;
 	position: relative;
-	display: inline-block;
+	top: -1.2em;
+	left: calc(2.5%);
+	z-index: 50;
+	background-color: #fff;
 }
 
 .autocomplete-items {
-	position: absolute;
 	border: 0.1em solid #d4d4d4;
 	z-index: 99;
-	top: 85%;
-	width: 95%;
 	text-align: left;
-	left: 0.8em;
-}
-.autocomplete-items div {
-	padding: 10px;
+	padding: 0.5em;
 	cursor: pointer;
 	background-color: #fff;
 	border-bottom: 1px solid #d4d4d4;
 }
-.autocomplete-items div:hover {
-	background-color: #e9e9e9;
-}
-.autocomplete-active {
-	background-color: #817dc9 !important;
-	color: #ffffff;
+.autocomplete-items:hover {
+	background-color: #817dc9;
+	color: #fff;
 }

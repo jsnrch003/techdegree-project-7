@@ -307,6 +307,7 @@ window.onload = () => {
 const user = document.querySelector('#user-search');
 const message = document.querySelector('#user-message');
 const send = document.querySelector('.button-send');
+const dropDown = document.getElementById('results');
 
 send.addEventListener('click', (e) => {
 	if (user.value === '' && message.value === '') {
@@ -320,6 +321,8 @@ send.addEventListener('click', (e) => {
 	}
 });
 
+// ================ Autocomplete ================
+
 const members = [
 	'Victoria Chambers',
 	'Dale Byrd',
@@ -331,86 +334,36 @@ const members = [
 	'Natalie Nguyen',
 ];
 
-// ================================================================================
-// Autocomplete functionality credit to W3 Schools
-// https://www.w3schools.com/howto/howto_js_autocomplete.asp
-
-function autocomplete(inp, arr) {
-	var currentFocus;
-
-	inp.addEventListener('input', function (e) {
-		var a,
-			b,
-			i,
-			val = this.value;
-		closeAllLists();
-		if (!val) {
-			return false;
-		}
-		currentFocus = -1;
-		a = document.createElement('DIV');
-		a.setAttribute('id', this.id + 'autocomplete-list');
-		a.setAttribute('class', 'autocomplete-items');
-		this.parentNode.appendChild(a);
-		for (i = 0; i < arr.length; i++) {
-			if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-				b = document.createElement('DIV');
-
-				b.innerHTML = '<strong>' + arr[i].substr(0, val.length) + '</strong>';
-				b.innerHTML += arr[i].substr(val.length);
-				b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-				b.addEventListener('click', function (e) {
-					inp.value = this.getElementsByTagName('input')[0].value;
-					closeAllLists();
-				});
-				a.appendChild(b);
-			}
-		}
-	});
-
-	inp.addEventListener('keydown', function (e) {
-		var x = document.getElementById(this.id + 'autocomplete-list');
-		if (x) x = x.getElementsByTagName('div');
-		if (e.keyCode == 40) {
-			currentFocus++;
-			addActive(x);
-		} else if (e.keyCode == 38) {
-			currentFocus--;
-			addActive(x);
-		} else if (e.keyCode == 13) {
-			e.preventDefault();
-			if (currentFocus > -1) {
-				if (x) x[currentFocus].click();
-			}
-		}
-	});
-
-	function addActive(x) {
-		if (!x) return false;
-		removeActive(x);
-		if (currentFocus >= x.length) currentFocus = 0;
-		if (currentFocus < 0) currentFocus = x.length - 1;
-		x[currentFocus].classList.add('autocomplete-active');
-	}
-
-	function removeActive(x) {
-		for (var i = 0; i < x.length; i++) {
-			x[i].classList.remove('autocomplete-active');
+user.oninput = function () {
+	let results = [];
+	const userInput = this.value.toLowerCase();
+	dropDown.innerHTML = '';
+	if (userInput.length > 0) {
+		results = getResults(userInput);
+		dropDown.style.display = 'block';
+		for (i = 0; i < results.length; i++) {
+			dropDown.innerHTML += `<li class="autocomplete-items">${results[i]}</li>`;
 		}
 	}
+};
 
-	function closeAllLists(elmnt) {
-		var x = document.getElementsByClassName('autocomplete-items');
-		for (var i = 0; i < x.length; i++) {
-			if (elmnt != x[i] && elmnt != inp) {
-				x[i].parentNode.removeChild(x[i]);
-			}
+function getResults(input) {
+	const results = [];
+	let memberLowCas = [];
+	for (let i = 0; i < members.length; i++) {
+		memberLowCas.push(members[i].toLowerCase());
+	}
+	for (let i = 0; i < memberLowCas.length; i++) {
+		if (input === memberLowCas[i].slice(0, input.length)) {
+			results.push(members[i]);
 		}
 	}
-
-	document.addEventListener('click', function (e) {
-		closeAllLists(e.target);
-	});
+	return results;
 }
 
-autocomplete(document.getElementById('user-search'), members);
+dropDown.onclick = (e) => {
+	const setValue = e.target.innerText;
+	user.value = setValue;
+	this.innerHTML = '';
+	dropDown.style.display = 'none';
+};
