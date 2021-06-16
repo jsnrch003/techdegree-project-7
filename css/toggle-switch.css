@@ -10,41 +10,31 @@
 /* ====================== Traffic Chart ====================== */
 
 /* Traffic chart label height */
-.switch-chart label {
+.chart-scope label {
 	cursor: pointer;
 	padding: 1em;
 }
 
 /* Traffic chart labels */
-.switch-chart input {
+.chart-scope input {
 	position: absolute;
 	left: 0;
 	opacity: 0;
 }
 
 /* Traffic chart label active background */
-.switch-chart input:focus + label {
+.chart-scope input:hover + label,
+.chart-scope input:focus + label {
 	background-color: #83c97d;
 	color: #fff;
 	border-radius: 30px;
 	padding: 0.5em 1em;
 }
 
-.switch-scope {
+.switch-chart-scope {
 	margin-right: 1em;
 	color: #9f9f9f;
-}
-
-/* Traffic chart labels */
-.switch-chart a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 0;
-	z-index: 1;
-	width: 10px;
-	height: 100%;
-	display: none;
+	cursor: pointer;
 }
 
 /* ====================== Settings toggles ====================== */

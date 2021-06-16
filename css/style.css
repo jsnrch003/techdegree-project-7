@@ -14,6 +14,7 @@ body {
 
 main {
 	text-align: center;
+	overflow: hidden;
 }
 
 h3 {
@@ -63,14 +64,15 @@ svg {
 	justify-content: space-between;
 	background-color: #817dc9;
 	align-items: center;
-	width: 100%;
-	padding: 1em;
+	padding: 1em 0;
 	grid-area: header;
+	overflow: hidden;
 }
 
 .logo {
 	color: #fff;
 	font-size: 1.5em;
+	padding-left: 1em;
 }
 
 .header-right {
@@ -85,6 +87,7 @@ svg {
 	align-items: center;
 	flex-wrap: nowrap;
 	color: #fff;
+	padding-right: 1em;
 }
 
 .header-right li {
@@ -421,6 +424,7 @@ form {
 
 #nav {
 	grid-area: nav;
+	overflow: hidden;
 }
 
 .traffic-container {

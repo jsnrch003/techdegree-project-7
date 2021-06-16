@@ -72,25 +72,24 @@
 				<div class="traffic-header">
 					<h3>Traffic</h3>
 					<div>
-						<ul class="chart-scope switch-chart">
-							<li class="switch-scope">
+						<ul class="chart-scope">
+							<li class="switch-chart-scope">
 								<input id="hour" name="view" type="radio" />
 								<label for="hour">Hour</label>
 							</li>
-							<li class="switch-scope">
+							<li class="switch-chart-scope">
 								<input id="day" name="view" type="radio" />
-								<label for="day">Day</label>
+								<label for="day" id="defaultChart">Day</label>
 							</li>
-							<li class="switch-scope">
+							<li class="switch-chart-scope">
 								<input id="week" name="view" type="radio" />
 								<label for="week">Week</label>
 							</li>
-							<li class="switch-scope">
+							<li class="switch-chart-scope">
 								<input id="month" name="view" type="radio" />
 								<label for="month">Month</label>
 							</li>
 						</ul>
-						<a href=""></a>
 					</div>
 					<div class="traffic-chart">
 						<canvas id="traffic-chart"> </canvas>

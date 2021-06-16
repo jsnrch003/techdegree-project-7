@@ -40,11 +40,11 @@ span2.addEventListener('click', (e) => {
 
 // ================================= Line Chart =================================
 
+const defaultChart = document.getElementById('defaultChart');
 const trafficCanvas = document.querySelector('#traffic-chart');
 const hourlyChart = document.querySelector(
 	'#traffic > div > div:nth-child(2) > ul > li:nth-child(1) > label'
 );
-
 const dailyChart = document.querySelector(
 	'#traffic > div > div:nth-child(2) > ul > li:nth-child(2) > label'
 );
@@ -54,6 +54,10 @@ const weeklyChart = document.querySelector(
 const monthlyChart = document.querySelector(
 	'#traffic > div > div:nth-child(2) > ul > li:nth-child(4) > label'
 );
+
+window.onload = function () {
+	defaultChart.focus();
+};
 
 const trafficDataHourly = {
 	labels: [
@@ -147,7 +151,7 @@ const trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
 	type: 'line',
-	data: trafficDataDaily,
+	data: '',
 	options: trafficOptions,
 });
 
