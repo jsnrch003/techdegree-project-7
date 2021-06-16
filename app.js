@@ -40,7 +40,6 @@ span2.addEventListener('click', (e) => {
 
 // ================================= Line Chart =================================
 
-const defaultChart = document.getElementById('defaultChart');
 const trafficCanvas = document.querySelector('#traffic-chart');
 const hourlyChart = document.querySelector(
 	'#traffic > div > div:nth-child(2) > ul > li:nth-child(1) > label'
@@ -54,10 +53,6 @@ const weeklyChart = document.querySelector(
 const monthlyChart = document.querySelector(
 	'#traffic > div > div:nth-child(2) > ul > li:nth-child(4) > label'
 );
-
-window.onload = function () {
-	defaultChart.focus();
-};
 
 const trafficDataHourly = {
 	labels: [
@@ -285,8 +280,15 @@ save.addEventListener('click', (e) => {
 
 clear.addEventListener('click', (e) => {
 	localStorage.clear();
+	clearSettings();
 	alert(`Settings successfully cleared`);
 });
+
+function clearSettings() {
+	timezone.value = 'default';
+	email.checked = false;
+	profile.checked = false;
+}
 
 window.onload = () => {
 	if (localStorage.timezone) {
@@ -322,6 +324,8 @@ send.addEventListener('click', (e) => {
 		alert(`Please fill out message field before sending`);
 	} else {
 		alert(`Message successfully sent to: ${user.value}`);
+		user.value = '';
+		message.value = '';
 	}
 });
 
@@ -346,7 +350,7 @@ user.oninput = function () {
 		results = getResults(userInput);
 		dropDown.style.display = 'block';
 		for (i = 0; i < results.length; i++) {
-			dropDown.innerHTML += `<li class="autocomplete-items">${results[i]}</li>`;
+			dropDown.innerHTML += `<li class="autocomplete-items" tabindex="0">${results[i]}</li>`;
 		}
 	}
 };
