@@ -40,19 +40,16 @@ span2.addEventListener('click', (e) => {
 
 // ================================= Line Chart =================================
 
-const trafficCanvas = document.querySelector('#traffic-chart');
-const hourlyChart = document.querySelector(
-	'#traffic > div > div:nth-child(2) > ul > li:nth-child(1) > label'
-);
-const dailyChart = document.querySelector(
-	'#traffic > div > div:nth-child(2) > ul > li:nth-child(2) > label'
-);
-const weeklyChart = document.querySelector(
-	'#traffic > div > div:nth-child(2) > ul > li:nth-child(3) > label'
-);
-const monthlyChart = document.querySelector(
-	'#traffic > div > div:nth-child(2) > ul > li:nth-child(4) > label'
-);
+const trafficCanvas = document.getElementById('traffic-chart');
+const defaultChart = document.querySelector('.chart-scope input:active + label');
+const hourlyChart = document.getElementById('hour');
+const dailyChart = document.getElementById('day');
+const weeklyChart = document.getElementById('week');
+const monthlyChart = document.getElementById('month');
+
+window.onload = () => {
+	defaultChart.setActive();
+};
 
 const trafficDataHourly = {
 	labels: [

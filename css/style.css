@@ -230,6 +230,8 @@ svg {
 #defaultChart:focus {
 	background-color: #9c4f4f;
 	color: #fff;
+	border-radius: 30px;
+	padding: 0.2em 1em;
 }
 
 .traffic-container,
@@ -240,8 +242,6 @@ svg {
 }
 
 canvas {
-	/* width: 95vw; */
-	/* margin: 1em auto; */
 	padding: 1em;
 }
 
