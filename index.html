@@ -23,7 +23,7 @@
 				<div class="notification"></div>
 				<ul>
 					<li><img class="student-pic" src="images/member-5.jpg" alt="" /></li>
-					<li>Steve Pheffer</li>
+					<li class="user-name">Steve Pheffer</li>
 				</ul>
 			</div>
 		</header>
@@ -75,19 +75,19 @@
 						<ul class="chart-scope">
 							<li class="switch-chart-scope">
 								<input id="hour" name="view" type="radio" />
-								<label for="hour">Hour</label>
+								<label tabindex="0" for="hour">Hourly</label>
 							</li>
 							<li class="switch-chart-scope">
 								<input id="day" name="view" type="radio" />
-								<label for="day" id="defaultChart">Day</label>
+								<label tabindex="0" for="day" id="defaultChart">Daily</label>
 							</li>
 							<li class="switch-chart-scope">
 								<input id="week" name="view" type="radio" />
-								<label for="week">Week</label>
+								<label tabindex="0" for="week">Weekly</label>
 							</li>
 							<li class="switch-chart-scope">
 								<input id="month" name="view" type="radio" />
-								<label for="month">Month</label>
+								<label tabindex="0" for="month">Monthly</label>
 							</li>
 						</ul>
 					</div>
@@ -293,52 +293,54 @@
 
 			<section id="settings">
 				<h3>Settings</h3>
-				<ul class="settings-flex-list">
-					<div class="settings-flex-container">
-						<li class="settings-flex-item">
-							<p>Send Email Notifications</p>
-						</li>
-						<li class="settings-flex-item">
-							<label class="switch switch-ios switch-setting">
-								<input id="email" type="checkbox" value="checked" />
-								<span>
-									<span>Off</span>
-									<span>On</span>
-									<a></a>
-								</span>
-							</label>
-						</li>
+				<div class="settings-container">
+					<ul class="settings-flex-list">
+						<div class="settings-flex-container">
+							<li class="settings-flex-item">
+								<p>Send Email Notifications</p>
+							</li>
+							<li class="settings-flex-item">
+								<label class="switch switch-ios switch-setting">
+									<input id="email" type="checkbox" value="checked" />
+									<span>
+										<span>Off</span>
+										<span>On</span>
+										<a></a>
+									</span>
+								</label>
+							</li>
+						</div>
+						<div class="settings-flex-container">
+							<li class="settings-flex-item">
+								<p>Set Profile to Public</p>
+							</li>
+							<li class="settings-flex-item">
+								<label class="switch switch-ios switch-setting">
+									<input id="profile" type="checkbox" value="checked" />
+									<span>
+										<span>Off</span>
+										<span>On</span>
+										<a></a>
+									</span>
+								</label>
+							</li>
+						</div>
+					</ul>
+					<div class="timezone">
+						<select name="timezone" id="timezone" class="timezone-field">
+							<option value="default" disabled>Select Time Zone</option>
+							<option value="eastern">Eastern</option>
+							<option value="central">Central</option>
+							<option value="mountain">Mountain</option>
+							<option value="pacific">Pacific</option>
+							<option value="alaska">Alaska</option>
+							<option value="hawaii">Hawaii</option>
+						</select>
 					</div>
-					<div class="settings-flex-container">
-						<li class="settings-flex-item">
-							<p>Set Profile to Public</p>
-						</li>
-						<li class="settings-flex-item">
-							<label class="switch switch-ios switch-setting">
-								<input id="profile" type="checkbox" value="checked" />
-								<span>
-									<span>Off</span>
-									<span>On</span>
-									<a></a>
-								</span>
-							</label>
-						</li>
+					<div class="settings-buttons">
+						<button class="button-save" id="save">Save</button>
+						<button class="button-clear" id="clear">Clear</button>
 					</div>
-				</ul>
-				<div class="timezone">
-					<select name="timezone" id="timezone" class="timezone-field">
-						<option value="default" disabled>Select Time Zone</option>
-						<option value="eastern">Eastern</option>
-						<option value="central">Central</option>
-						<option value="mountain">Mountain</option>
-						<option value="pacific">Pacific</option>
-						<option value="alaska">Alaska</option>
-						<option value="hawaii">Hawaii</option>
-					</select>
-				</div>
-				<div class="settings-buttons">
-					<button class="button-save" id="save">Save</button>
-					<button class="button-clear" id="clear">Clear</button>
 				</div>
 			</section>
 		</main>

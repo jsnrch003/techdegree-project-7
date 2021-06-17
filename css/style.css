@@ -14,7 +14,7 @@ body {
 
 main {
 	text-align: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 h3 {
@@ -24,6 +24,7 @@ h3 {
 	margin-bottom: 0;
 	margin-top: 1em;
 	letter-spacing: 0.1em;
+	font-size: 1em;
 }
 
 li {
@@ -66,13 +67,15 @@ svg {
 	align-items: center;
 	padding: 1em 0;
 	grid-area: header;
-	overflow: hidden;
+	/* overflow: hidden; */
+	width: 100%;
 }
 
 .logo {
 	color: #fff;
-	font-size: 1.5em;
-	padding-left: 1em;
+	font-size: 1.2em;
+	padding-left: 0.5em;
+	font-weight: 400;
 }
 
 .header-right {
@@ -87,12 +90,18 @@ svg {
 	align-items: center;
 	flex-wrap: nowrap;
 	color: #fff;
-	padding-right: 1em;
+	margin-right: 0.7em;
 }
 
 .header-right li {
-	padding-left: 1em;
+	padding-left: 0.5em;
 	text-align: center;
+}
+
+.user-name {
+	/* width: 1em; */
+	font-size: 0.9em;
+	font-weight: 200;
 }
 
 /* ====================== Notifications Bell ====================== */
@@ -100,7 +109,10 @@ svg {
 .ringBell {
 	transform-origin: top;
 	cursor: pointer;
-	margin-right: 1em;
+}
+
+.ringBell > img {
+	width: 1.5em;
 }
 
 .ringBell:hover {
@@ -120,24 +132,24 @@ svg {
 }
 
 .notification {
-	width: 0.5em;
-	height: 0.5em;
-	border-radius: 50%;
-	background-color: #0f0;
+	width: 0.4em;
+	height: 0.4em;
+	border-radius: 55%;
+	background-color: #8fff8f;
 	z-index: 90;
-	top: -1.5em;
-	left: -1em;
+	top: -1.2em;
+	left: -0.7em;
 	position: relative;
 }
 
 /* ====================== Borders ====================== */
 
 #header > div > ul > li:nth-child(1) {
-	border-left: 1px solid #fff6;
+	border-left: 2px solid #aaa6;
 }
 
 .header-right li:nth-of-type(2) {
-	border-left: 1.7px solid #bdbdbd57;
+	/* border-left: 1.7px solid #bdbdbd57; */
 }
 
 #traffic,
@@ -194,13 +206,13 @@ svg {
 	background-color: #817dc9;
 	color: #fff;
 	font-weight: 200;
-	font-size: 1.2em;
+	font-size: 1em;
 	text-align: left;
 	padding: 0.7em 1em;
 	border: 2px solid #9f9f9f5e;
 	border-radius: 5px;
-	width: 95%;
-	margin: 2em auto 1em;
+	width: 100%;
+	margin: 1em auto 1em;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -211,17 +223,26 @@ svg {
 	margin-top: 1em;
 	display: flex;
 	justify-content: space-evenly;
+	margin-right: 1em;
+}
+
+#defaultChart:active,
+#defaultChart:focus {
+	background-color: #9c4f4f;
+	color: #fff;
 }
 
 .traffic-container,
 .daily-traffic,
 .mobile-users {
 	width: 100%;
+	margin: 0 auto;
 }
 
 canvas {
-	width: 95vw;
-	padding: 0.7em;
+	/* width: 95vw; */
+	/* margin: 1em auto; */
+	padding: 1em;
 }
 
 .traffic-list {
@@ -240,7 +261,7 @@ canvas {
 	background-color: #f3f3f3;
 	border: 2px solid #d3d3d3;
 	border-radius: 5px;
-	width: 95%;
+	width: 90%;
 	max-width: 460px;
 	margin: 1em auto;
 	padding: 1em;
@@ -249,7 +270,7 @@ canvas {
 }
 
 .social-text {
-	padding-left: calc(10% / 2);
+	padding-left: calc(12.5% / 2);
 	font-size: 0.8em;
 }
 
@@ -279,7 +300,7 @@ p.social-brand {
 /* ====================== Members ====================== */
 
 .student-pic {
-	width: 3.3em;
+	width: 2.5em;
 	border-radius: 50%;
 }
 
@@ -293,8 +314,9 @@ p.social-brand {
 .recent-activity {
 	width: 95%;
 	margin: 0 auto;
-	padding: 1.5em;
+	padding: 1.2em;
 	border-bottom: 2px solid #9f9f9f5e;
+	font-size: 0.9em;
 }
 
 .new-member:last-child,
@@ -304,7 +326,7 @@ p.social-brand {
 
 .member-pic {
 	border-radius: 50%;
-	width: 5em;
+	width: 4em;
 }
 
 .right-arrow {
@@ -335,13 +357,18 @@ form {
 	border: 2px solid #9f9f9f5e;
 	background-color: #f6f6f6;
 	border-radius: 5px;
-	font-size: 1.2em;
+	font-size: 1em;
 	outline: none;
 }
 
 .user-search-field::placeholder,
 .user-message-field::placeholder {
 	font-weight: 200;
+}
+
+.message-container {
+	width: 95%;
+	margin: 0 auto;
 }
 
 .user-message-field {
@@ -356,7 +383,7 @@ form {
 	text-transform: uppercase;
 	background-color: #817dc9;
 	color: #fff;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 400;
 	letter-spacing: 0.2rem;
 	padding: 0.8em;
@@ -376,12 +403,19 @@ form {
 	flex-direction: column;
 	grid-area: settings;
 	justify-content: space-between;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.settings-container {
+	width: 95%;
+	margin: 0 auto;
 }
 
 .settings-flex-list {
 	display: flex;
 	flex-direction: column;
-	margin: 0em 1.2em;
+	margin: 0em 0.5em;
 }
 
 .settings-flex-container {
@@ -396,13 +430,14 @@ form {
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 7.5em;
+	width: 7em;
 	cursor: pointer;
 }
 
 .timezone-field {
 	width: 95%;
 	text-decoration: none;
+	margin-bottom: 1.5em;
 }
 
 .settings-buttons {
@@ -424,7 +459,7 @@ form {
 
 #nav {
 	grid-area: nav;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 .traffic-container {
@@ -635,31 +670,32 @@ form {
 .modal1-content,
 .modal2-content {
 	background-color: #fefefe;
-	padding: 1.5em;
+	padding: 1.2em;
 	border: 3px solid #817dc9;
-	width: 65%;
+	width: 85%;
 	z-index: 20;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	font-size: 0.9em;
 }
 
 .modal1-content {
 	top: calc(100% / 4.5);
-	left: calc(100% / 6.5);
+	left: calc(100% / 15);
 	position: fixed;
 }
 
 .modal2-content {
 	top: calc(100% / 4);
-	left: calc(100% / 5.5);
+	left: calc(100% / 10);
 	position: fixed;
 }
 
 .close {
 	color: #817dc9;
-	font-size: 2em;
+	font-size: 1.3em;
 }
 
 .close:hover,
