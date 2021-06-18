@@ -24,8 +24,7 @@
 
 /* Traffic chart label active background */
 .chart-scope input:hover + label,
-.chart-scope input:focus + label,
-.chart-scope input:active + label {
+.chart-scope input:checked + label {
 	background-color: #83c97d;
 	color: #fff;
 	border-radius: 30px;

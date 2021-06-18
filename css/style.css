@@ -226,14 +226,6 @@ svg {
 	margin-right: 1em;
 }
 
-#defaultChart:active,
-#defaultChart:focus {
-	background-color: #9c4f4f;
-	color: #fff;
-	border-radius: 30px;
-	padding: 0.2em 1em;
-}
-
 .traffic-container,
 .daily-traffic,
 .mobile-users {

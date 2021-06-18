@@ -41,14 +41,14 @@ span2.addEventListener('click', (e) => {
 // ================================= Line Chart =================================
 
 const trafficCanvas = document.getElementById('traffic-chart');
-const defaultChart = document.querySelector('.chart-scope input:active + label');
+
 const hourlyChart = document.getElementById('hour');
 const dailyChart = document.getElementById('day');
 const weeklyChart = document.getElementById('week');
 const monthlyChart = document.getElementById('month');
 
 window.onload = () => {
-	defaultChart.setActive();
+	dailyChart.setAttribute('checked', false);
 };
 
 const trafficDataHourly = {
@@ -79,7 +79,7 @@ const trafficDataDaily = {
 	labels: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
 	datasets: [
 		{
-			data: [142, 285, 214, 250, 178, 264, 321],
+			data: [75, 115, 175, 125, 225, 200, 100],
 			backgroundColor: 'rgba(116,119,191,.3)',
 			borderWidth: 1,
 			fill: 'origin',
@@ -143,7 +143,7 @@ const trafficOptions = {
 
 let trafficChart = new Chart(trafficCanvas, {
 	type: 'line',
-	data: '',
+	data: trafficDataDaily,
 	options: trafficOptions,
 });
 
